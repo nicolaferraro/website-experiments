@@ -18,6 +18,8 @@
   "homepage": "https://github.com/nicolaferraro/website-experiments#readme",
   "dependencies": {
     "@antora/cli": "^1.1.1",
-    "@antora/site-generator-default": "^1.1.1"
+    "@antora/site-generator-default": "^1.1.1",
+    "cryptiles": "^4.1.2",
+    "hoek": "^4.2.1"
   }
 }
