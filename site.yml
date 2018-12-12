@@ -1,6 +1,6 @@
 site:
   title: Camel K
-  url: https://example.org/docs
+  url: https://www.nicolaferraro.me/website-experiments
   start_page: camel-k::getting-started.adoc 
 content:
   sources:
