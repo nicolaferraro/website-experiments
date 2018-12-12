@@ -1,0 +1,14 @@
+site:
+  title: Camel K
+  url: https://example.org/docs
+  start_page: camel-k::getting-started.adoc 
+content:
+  sources:
+  - url: git@github.com:nicolaferraro/camel-k.git
+    branches:
+    - antora
+    start_path: docs
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
