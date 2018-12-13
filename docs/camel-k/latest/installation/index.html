@@ -120,7 +120,7 @@
     <li class="crumb"><a href="index.html">Installing Camel K</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/nferraro/gopaths/camel-k/src/github.com/apache/camel-k/docs/modules/ROOT/pages/installation/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/nicolaferraro/camel-k/edit/antora/docs/modules/ROOT/pages/installation/index.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Installing Camel K</h1>
@@ -162,14 +162,11 @@ before installing it. Customized instructions are needed for the following clust
 <div class="sectionbody">
 <div class="paragraph">
 <p>To start using Camel K you need the <strong>"kamel"</strong> CLI tool, that can be used to both configure the cluster and run integrations.
-Look into the <a href="https://github.com/apache/camel-k/releases">release page</a> for latest version of the <code>kamel</code> tool.</p>
+Look into the <a href="https://github.com/apache/camel-k/releases">release page</a> for latest version of the <strong>camel-k-client</strong> tool for your specific platform.</p>
 </div>
 <div class="paragraph">
-<p>If you want to contribute, you can also <strong>build it from source!</strong> Refer to the <a href="../developers.html" class="page">developer&#8217;s guide</a>
-for information on how to do it.</p>
-</div>
-<div class="paragraph">
-<p>You should put the "kamel" CLI tool into your system path. For example, if you&#8217;re using Linux, you can put <code>kamel</code> in <code>/usr/bin</code>.</p>
+<p>Download and uncompress the archive. It contains a small binary file named <code>kamel</code> that you should put into your system path.
+For example, if you&#8217;re using Linux, you can put <code>kamel</code> in <code>/usr/bin</code>.</p>
 </div>
 <div class="paragraph">
 <p>Once you have put the "kamel" CLI in the path, log into your cluster using the standard "oc" (OpenShift) or "kubectl" (Kubernetes) client tool and execute the following command to install Camel K:</p>
@@ -195,6 +192,9 @@ For Minishift, this means executing <code>oc login -u system:admin</code> then <
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>You&#8217;re now ready to <a href="../running.html" class="page">run some integrations</a>.</p>
 </div>
 </div>
 </div>
