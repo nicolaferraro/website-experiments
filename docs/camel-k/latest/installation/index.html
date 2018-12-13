@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installation :: Camel K</title>
-    <link rel="canonical" href="https://www.nicolaferraro.me/website-experiments/camel-k/latest/installation.html">
+    <title>Installing Camel K :: Camel K</title>
+    <link rel="canonical" href="https://www.nicolaferraro.me/website-experiments/camel-k/latest/installation/index.html">
     <meta name="generator" content="Antora 1.1.1">
-    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
 <header class="header">
@@ -61,26 +61,30 @@
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">Apache Camel K</a></h3>
+    <h3 class="title"><a href="../index.html">Apache Camel K</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
-    <button class="nav-toggle"></button>
-    <a class="nav-link" href="index.html">Camel K</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-toggle"></button>
-    <a class="nav-link" href="installation.html">Installation</a>
+    <a class="nav-link" href="index.html">Installing Camel K</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="installation-minikube.html">Minikube</a>
+    <a class="nav-link" href="minikube.html">Minikube</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="installation-minishift.html">Minishift</a>
+    <a class="nav-link" href="minishift.html">Minishift</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="installation-gke.html">Google Kubernetes Engine (GKE)</a>
+    <a class="nav-link" href="gke.html">Google Kubernetes Engine (GKE)</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../running.html">Running Integrations</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../configuration/index.html">Configuration</a>
   </li>
 </ul>
   </li>
@@ -97,7 +101,7 @@
       <span class="title">Apache Camel K</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">latest</a>
+          <a href="../index.html">latest</a>
         </li>
       </ul>
     </li>
@@ -109,18 +113,17 @@
   <main class="main">
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../index.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="index.html">Apache Camel K</a></li>
-    <li class="crumb"><a href="index.html">Camel K</a></li>
-    <li class="crumb"><a href="installation.html">Installation</a></li>
+    <li class="crumb"><a href="../index.html">Apache Camel K</a></li>
+    <li class="crumb"><a href="index.html">Installing Camel K</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/nicolaferraro/camel-k/edit/antora/docs/modules/ROOT/pages/installation.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/nferraro/gopaths/camel-k/src/github.com/apache/camel-k/docs/modules/ROOT/pages/installation/index.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1>Installation</h1>
+<h1>Installing Camel K</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -139,13 +142,13 @@ before installing it. Customized instructions are needed for the following clust
 <div class="ulist">
 <ul>
 <li>
-<p><a href="installation-minikube.html" class="page">Minikube</a></p>
+<p><a href="minikube.html" class="page">Minikube</a></p>
 </li>
 <li>
-<p><a href="installation-minishift.html" class="page">Minishift</a></p>
+<p><a href="minishift.html" class="page">Minishift</a></p>
 </li>
 <li>
-<p><a href="installation-gke.html" class="page">Google Kubernetes Engine (GKE)</a></p>
+<p><a href="gke.html" class="page">Google Kubernetes Engine (GKE)</a></p>
 </li>
 </ul>
 </div>
@@ -158,15 +161,18 @@ before installing it. Customized instructions are needed for the following clust
 <h2 id="procedure"><a class="anchor" href="#procedure"></a>Procedure</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To start using Camel K you need the <strong>"kamel"</strong> binary, that can be used to both configure the cluster and run integrations.
+<p>To start using Camel K you need the <strong>"kamel"</strong> CLI tool, that can be used to both configure the cluster and run integrations.
 Look into the <a href="https://github.com/apache/camel-k/releases">release page</a> for latest version of the <code>kamel</code> tool.</p>
 </div>
 <div class="paragraph">
-<p>If you want to contribute, you can also <strong>build it from source!</strong> Refer to the <a href="developers.html" class="page">developer&#8217;s guide</a>
+<p>If you want to contribute, you can also <strong>build it from source!</strong> Refer to the <a href="../developers.html" class="page">developer&#8217;s guide</a>
 for information on how to do it.</p>
 </div>
 <div class="paragraph">
-<p>Once you have the "kamel" binary, log into your cluster using the standard "oc" (OpenShift) or "kubectl" (Kubernetes) client tool and execute the following command to install Camel K:</p>
+<p>You should put the "kamel" CLI tool into your system path. For example, if you&#8217;re using Linux, you can put <code>kamel</code> in <code>/usr/bin</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once you have put the "kamel" CLI in the path, log into your cluster using the standard "oc" (OpenShift) or "kubectl" (Kubernetes) client tool and execute the following command to install Camel K:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -199,8 +205,8 @@ For Minishift, this means executing <code>oc login -u system:admin</code> then <
   <p>This page was built using the Antora default UI.</p>
   <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
 </footer>
-<script src="../../_/js/site.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
 <script>hljs.initHighlighting()</script>
   </body>
 </html>

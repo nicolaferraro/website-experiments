@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installation on Minishift :: Camel K</title>
-    <link rel="canonical" href="https://www.nicolaferraro.me/website-experiments/camel-k/latest/installation-minishift.html">
+    <title>Installing Camel K on Minikube :: Camel K</title>
+    <link rel="canonical" href="https://www.nicolaferraro.me/website-experiments/camel-k/latest/installation/minikube.html">
     <meta name="generator" content="Antora 1.1.1">
-    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
 <header class="header">
@@ -61,26 +61,30 @@
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">Apache Camel K</a></h3>
+    <h3 class="title"><a href="../index.html">Apache Camel K</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
-    <button class="nav-toggle"></button>
-    <a class="nav-link" href="index.html">Camel K</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-toggle"></button>
-    <a class="nav-link" href="installation.html">Installation</a>
+    <a class="nav-link" href="index.html">Installing Camel K</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="installation-minikube.html">Minikube</a>
-  </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="installation-minishift.html">Minishift</a>
+    <a class="nav-link" href="minikube.html">Minikube</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="installation-gke.html">Google Kubernetes Engine (GKE)</a>
+    <a class="nav-link" href="minishift.html">Minishift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gke.html">Google Kubernetes Engine (GKE)</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../running.html">Running Integrations</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../configuration/index.html">Configuration</a>
   </li>
 </ul>
   </li>
@@ -97,7 +101,7 @@
       <span class="title">Apache Camel K</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">latest</a>
+          <a href="../index.html">latest</a>
         </li>
       </ul>
     </li>
@@ -109,53 +113,40 @@
   <main class="main">
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../index.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="index.html">Apache Camel K</a></li>
-    <li class="crumb"><a href="index.html">Camel K</a></li>
-    <li class="crumb"><a href="installation.html">Installation</a></li>
-    <li class="crumb"><a href="installation-minishift.html">Minishift</a></li>
+    <li class="crumb"><a href="../index.html">Apache Camel K</a></li>
+    <li class="crumb"><a href="index.html">Installing Camel K</a></li>
+    <li class="crumb"><a href="minikube.html">Minikube</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/nicolaferraro/camel-k/edit/antora/docs/modules/ROOT/pages/installation-minishift.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/nferraro/gopaths/camel-k/src/github.com/apache/camel-k/docs/modules/ROOT/pages/installation/minikube.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1>Installation on Minishift</h1>
+<h1>Installing Camel K on Minikube</h1>
 <div class="paragraph">
-<p>You can run Camel K integrations on OpenShift using the Minishift cluster creation tool.
-Follow the instructions in the <a href="https://github.com/minishift/minishift#getting-started">getting started guide</a> for the installation.</p>
+<p>You can run Camel K integrations on plain Kubernetes using the Minikube cluster creation tool.
+Follow the instructions in the <a href="https://github.com/kubernetes/minikube#installation">official doc</a> for the installation.</p>
 </div>
 <div class="paragraph">
-<p>After installing the <code>minishift</code> binary, you need to enable the <code>admin-user</code> addon:</p>
+<p>Start a new instance of Minikube using the command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>minishift addons enable admin-user</code></pre>
+<pre class="highlightjs highlight"><code>minikube start</code></pre>
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-the admin user addon should be enabled before starting the cluster for the first time
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
-<p>Then you can start the cluster with:</p>
+<p>After the startup process is completed, you need to <strong>enable the <code>registry</code> addon</strong>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>minishift start</code></pre>
+<pre class="highlightjs highlight"><code>minikube addons enable registry</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You can now proceed with the <a href="installation.html#procedure" class="page">standard Camel K installation procedure</a>.</p>
+<p>You can now proceed with the <a href="index.html#procedure" class="page">standard Camel K installation procedure</a>.</p>
 </div>
 </article>
   </main>
@@ -164,8 +155,8 @@ the admin user addon should be enabled before starting the cluster for the first
   <p>This page was built using the Antora default UI.</p>
   <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
 </footer>
-<script src="../../_/js/site.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
 <script>hljs.initHighlighting()</script>
   </body>
 </html>

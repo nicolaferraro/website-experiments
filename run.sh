@@ -12,4 +12,5 @@ rm -rf docs
 echo "" > docs/.nojekyll
 
 # Serve the content
-serve docs
+cd docs
+python3 -m http.server 5000
